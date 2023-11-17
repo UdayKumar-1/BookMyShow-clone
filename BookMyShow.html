@@ -1,0 +1,667 @@
+<html>
+    <head>
+        <title>BookMyShowReplica</title>
+        <!-- Corrected link to Boxicons CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .page .main{
+                display: flex;
+                background-image: linear-gradient(rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+                padding: 10px;
+                justify-content: space-between;
+                padding: 10px 100px 10px 100px;
+                width: 1340px;
+            }
+            .page .main .name{
+                position: relative;
+                color: white;
+                display: flex;
+                font-size: 25px;
+                align-items: center;
+                padding: 5px 20px 1px 5px;
+            }
+            .page .main .bx-search-alt-2{
+                position: absolute;
+                left:750px;
+                top: 27px;
+            }
+            .page .main .nav_search .Search{
+                position: relative;
+                height: 35px;
+                width: 500px;
+                border-radius: 10px;
+                margin-top: 10px;
+                margin-left: 4px;
+                cursor:inherit;
+                top: -3px;
+                padding: 10px;
+                margin-right: 300px;
+                font-size: 15px;
+            }
+            .page .main .nav_search .Search:hover{
+                color: white;
+                background-image: linear-gradient(to bottom right,green,orange,yellow,white,aqua);
+            }
+            .page .main .name #span1{
+                background-color: red;
+                transform: rotate(14deg);
+                border-radius: 8px;
+            }
+            .page .main .select{
+                margin-top: -4px;
+                padding:0px 30px 0px 0px;
+            }
+            .page .main .select .select_bar{
+                color: #b2beb5;
+                background-color: rgba(0,0,0,0.8);
+                padding: 8px;
+                border-radius: 5px;
+                margin-top: 10px;
+                cursor: pointer;
+                
+            }
+            .page .main .select .select_bar:hover{
+                color: black;
+                background-color: pink;
+            }
+            .page .main .btn{
+                margin-top: 10px;
+                font-size: 17px;
+                padding: 5px 40px 5px 10px;
+            }
+            .page .main .btn .Sign_in{
+                color:white;
+                border:2px solid red;
+                background-color: red;
+                border-radius: 5px;
+                padding: 5px 16px;
+                margin-top: -8px;
+                cursor: pointer;
+                text-align: center;
+            }
+            .page .main .btn .Sign_in:hover{
+                background-color: greenyellow;
+                color: black;
+            }
+            .page .main .hamburger{
+                display: flex;
+                padding: 4px;
+                width: 30px;
+                height: 18px;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+                margin: 8px;
+                border: 2px solid white;
+                border-radius: 5px;
+                box-shadow: 1px 2px 10px 4px white;
+            }
+            .page .main .hamburger .line{
+                width: 100%;
+                height: 3px;
+                background-color:#f1f1f1;
+            }
+            .page .main .hamburger:hover{
+                background-color: lightblue;
+            }
+            .page .navbar{
+                background-color: rgba(0,0,0,1);
+                width: 1540px;
+                display: flex;
+            }
+            .page .navbar:hover{
+                background-color: purple;
+            }
+            .page .navbar ul{
+                display: flex;
+                padding: 4px;
+            }
+            .page .navbar ul li{
+                text-decoration: none;
+                list-style-type: none;
+                color: #f1f1f1;
+                padding: 8px;
+            }
+            .page .navbar ul li a{
+                text-decoration: none;
+                color: white;
+            }
+            .page .navbar ul li .one{
+                padding:0px 5px 0px 100px;
+            }
+            .page .navbar ul .li1{
+                margin-left: 530px;
+                padding: 14px;
+            }
+            .page .marqueetag{
+                    background-color: transparent;
+                    display: flex;
+                    position: relative;
+                    cursor: pointer;
+                    width: 1540px;
+                    overflow: none;
+            }
+            .tagmarquee{
+                background-image: url("pic3.avif");
+                width: 1540px;
+                overflow: none;
+            }
+            .image{
+                margin-top: 60px;
+            }
+            .image .offer{
+                margin: 0px 50px 10px 50px;
+                border-radius: 20px;
+                cursor: pointer;
+                overflow: none;
+            }
+            .page .recom p{
+                font-family: 'Roboto','Poppins', sans-serif;
+                padding-left: 80px;
+                padding-top: 20px;
+                font-size: 25px;
+            }
+            .page .box{
+                display: flex;
+                height: 500px;
+                width: 1300px;
+                margin: 10px 80px;
+            }
+            .page .box .Movie_rec p{
+                margin-left: 10px;
+                margin-top: 10px;
+                font-size: 20px;
+                margin-bottom: 10px;
+                font-family: 'poppin','roboto';
+            }
+            .page .box .Movie_rec .Movie_img{
+                display: flex;
+                margin: 0px 10px 0px 0px;
+                position: relative;
+            }
+            .page .box .Movie_rec .Movie_img .one,.two,.three,.four,.five{
+                margin-right: 28px;
+                border-radius: 20px;
+            }
+            .frst{
+                margin:-85px 90px 10px 95px;
+                font-family: 'poppin','roboto';
+                font-size: 17px;
+            }
+            .frsti{
+                margin:-50px 90px 10px 95px;
+            }
+            .second{
+                margin:-65px 90px 10px 390px;
+                font-family: 'poppin','roboto';
+                font-size: 17px;
+            }
+            .secondi{
+                margin:-10px 90px 10px 390px;
+            }
+            .third{
+                margin:-50px 90px 10px 680px;
+                font-family: 'poppin','roboto';
+                font-size: 17px;
+            }
+            .thirdi{
+                margin:-10px 90px 10px 680px;
+            }
+            .fourth{
+                margin:-50px 90px 10px 970px;
+                font-family: 'poppin','roboto';
+                font-size: 17px;
+            }
+            .fourthi{
+                margin:-10px 90px 10px 970px;
+            }
+            .fifth{
+                margin:-50px 90px 10px 1260px;
+                font-family: 'poppin','roboto';
+                font-size: 17px;
+            }
+            .fifthi{
+                margin:-10px 90px 10px 1260px;
+            }
+            .entertain{
+                margin-top: 60px;
+            }
+            .entertain .ad{
+                margin: 0px 50px 10px 50px;
+                border-radius: 20px;
+                cursor: pointer;
+                overflow: none;
+            }
+            .LiveEvents .event_name{
+                font-family: 'Arial';
+                font-size: 23px;
+                margin-top: 50px;
+                margin-left: 60px;
+                margin-right: 60px;
+                border-radius: 10px;
+                color: black;
+                background-color: lightblue;
+                width: 1400px;
+                cursor: pointer;
+            }
+            .page .LiveEvents .event_name:hover{
+                background-image:linear-gradient(to bottom right,orange,green,white,lightblue,pink,gold,aqua);
+            }
+            .Events_pic{
+                display: flex;
+            }
+            .inside{
+                margin: 25px 27px 60px 75px;
+                width: 1450px;
+            }
+            .event1,.event2,.event3,.event4,.event5{
+                border-radius:20px ;
+                margin-right: 60px;
+                cursor: pointer;
+            }
+            .premiere{
+                height: 628px;
+                width:1540px;
+                background-color: rgb(6, 53, 82);
+                color: white;
+                margin-bottom: 50px;
+            }
+            .premiere .premiere_name{
+                display: flex;
+            }
+            .premiere .premiere_name .bx-play-circle{
+                font-size: 70px;
+                margin: 35px 10px 0px 130px;
+                color: orange;
+            }
+            .premiere .premiere_name .premiere_cap{
+                margin: 38px 0px 0px 0px;
+                font-size: 30px;
+                letter-spacing: 3px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+            }
+            .premiere .premiere_sub{
+                margin: -30px 0px 30px 210px;
+                font-family:Verdana, Geneva, Tahoma, sans-serif
+
+            }
+            .premiere .premiere_head .premieresub_name{
+                margin: 0px 0px 5px 130px;
+                font-size: 25px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            .premiere .premieresub_name_sub{
+                margin: 0px 0px 10px 130px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                letter-spacing: 2px;
+            }
+            .premiere_pic{
+                display: flex;
+            }
+            .premiere_pic .inside_box{
+                margin: 0px 130px;
+            }
+            .premiere1,.premiere2,.premiere3,.premiere4,.premiere5{
+                border-radius: 20px;
+                margin-right: 22px;
+            }
+            .premiere_subb{
+                margin: 10px 0px 10px 135px ;
+            }
+            .premiere_subb .premiere_subb1{
+                margin:10px 0px 10px 0px;
+                font-size: 22px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            .premiere_subb .premiere_subb2{
+                margin:0px 0px 10px 150px;
+                font-size: 22px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            .premiere_subb .premiere_subb3{
+                margin:0px 0px 10px 43px;
+                font-size: 22px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            .premiere_subb .premiere_subb4{
+                margin:0px 0px 10px 150px;
+                font-size: 22px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            .premiere_subb .premiere_subb5{
+                margin:0px 0px 10px 143px;
+                font-size: 22px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            .lang{
+                margin: 10px 0px 10px 135px ;
+            }
+            .lang .lang1{
+                margin:10px 0px 10px 0px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                letter-spacing: 1px;
+            }
+            .lang .lang2{
+                margin:0px 0px 10px 193px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                letter-spacing: 1px;
+            }
+            .lang .lang3{
+                margin:0px 0px 10px 193px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                letter-spacing: 1px;
+            }
+            .lang .lang4{
+                margin:10px 0px 10px 193px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                letter-spacing: 1px;
+            }
+            .lang .lang5{
+                margin:10px 0px 10px 208px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                letter-spacing: 1px;
+            }
+            .baselinee{
+                height: 100px;
+                width: 1540px;
+                color: white;
+                background-color: rgba(0,0,0,0.6);
+            }
+            .baselinee:hover{
+                background-color: aqua;
+                color: black;
+            }
+            .baselinee .subs{
+                margin: 50px 100px 50px 100px;
+                display: flex;
+            }
+            .baselinee .subs .bx-store-alt{
+                font-size: 35px;
+                color: yellow;
+                margin-top: 34px;
+            }
+            .baselinee .subs .list_show{
+                font-size: 15px;
+                letter-spacing: 1px;
+                margin-top: 40px;
+                margin-left: 20px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+            }
+            .baselinee .subs button{
+                background-color: red;
+                color: white;
+                border-radius: 8px 0px 20px;
+                border: 1px solid rgba(0,0,0,0.5);
+                margin: 30px 50px 0px 230px ;
+                padding: 10px;
+                cursor: pointer;
+            }
+            .baselinee .subs button:hover{
+                background-color: greenyellow;
+                color: black;
+            }
+            .footer{
+                background-color: rgba(0,0,0,0.8);
+                height: 380px;
+                width: 1540px;
+            }
+            .footer .footer_box{
+                color: lightblue;
+            }
+            .footer .footer_box .bx-user-voice{
+                margin: 20px 120px 0px 250px;
+                font-size: 80;
+            }
+            .footer .footer_box .bx-camera-movie{
+                margin: 20px 100px 0px 250px;
+                font-size: 80;
+            }
+            .footer .footer_box .bx-envelope-open{
+                margin: 20px 100px 0px 250px;
+                font-size: 80;
+            }
+            .footer .footer_sub{
+                color: lightblue;
+                margin: 0px 100px 60px 215px;
+            }
+            .footer .footer_sub .customer_sup{
+                margin-right: 300px;
+            }
+            .footer .footer_sub .resend{
+                margin-right: 246px;
+                overflow: none;
+            }
+            .footer .footer_bookmyshow{
+                color: white;
+            }
+            .footer .footer_bookmyshow_logo{
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 22px;
+            }
+            .footer_bookmyshow_logo .my{
+                background-color: red;
+                border-radius: 8px;
+            }
+            .footer .social{
+                cursor: pointer;
+                margin: 40px 40px 40px 655px;
+            }
+            .footer .social .bxl-facebook-square,.bx-spin,.bx-rotate-180,.bxl-pinterest,.bxl-linkedin{
+                color: white;
+                font-size: 40px;
+            }
+            .footer .bxl-facebook-square:hover{
+                background-color: gold;
+                color: black;
+                border-radius: 10px;
+            }
+            .footer .bx-spin:hover{
+                background-color: aqua;
+                color: black;
+                border-radius: 10px;
+            }
+            .footer .bx-rotate-180:hover{
+                background-color: red;
+                color: black;
+                border-radius: 10px;
+            }
+            .footer .bxl-pinterest:hover{
+                background-color: greenyellow;
+                color: black;
+                border-radius: 10px;
+            }
+            .footer .bxl-linkedin:hover{
+                background-color: orange;
+                color: black;
+                border-radius: 10px;
+            }
+            .footer .social .copyright{
+                margin: 0px 0px 10px 150px;
+            }
+            .footer .copy{
+                color: white;
+            }
+            .footer .copy .copy_sub{
+                margin: 0px 0px 10px 150px;
+                color: lightblue;
+                padding: 10px;
+            } 
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <div class="main">
+                <div class="name">
+                    Book<span id="span1">My</span>Show
+                </div>
+                <div class="nav_search">
+                    <input type="text" placeholder=" Search for Movies,Events,plays,Sports and Activities"class="Search">
+                    <i class='bx bx-search-alt-2'></i>
+                </div>
+                <div class="select">
+                    <select class="select_bar">
+                        <option class="show">Search City</option>
+                        <option class="city">Hyderabad</option>
+                        <option class="city">Bangalore</option>
+                        <option class="city">Karimnagar</option>
+                        <option class="city">Delhi</option>
+                    </select>
+                </div>
+                <div class="btn">
+                    <p class="Sign_in">Sign</p>
+                </div>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>         
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="#Movies"class="one">Movies</a></li>
+                    <li><a href="#Stram">Stream</a></li>
+                    <li><a href="#Events">Events</a></li>
+                    <li><a href="#Plays">Plays</a></li>
+                    <li><a href="#Sports">Sports</a></li>
+                    <li><a href="#Activities">Activities</a></li>
+                    <li><a href="#Buzz">Buzz</a></li>
+                    <li><a href="#ListShow"class="li1">ListYourShow</a></li>
+                    <li><a href="#corporates">Corporates</a></li>
+                    <li><a href="#offers">offers</a></li>
+                    <li><a href="#giftcards">Giftcards</a></li>
+                </ul>
+            </div>
+            <div class="marqueetag">
+                <marquee behavior="alternative" direction="right"class="tagmarquee">
+                    <img src="Pic1.avif" alt="ticketOffer2">
+                    <img src="pic2.avif" alt="ticketsOffer">
+                    <img src="2023worldcup.avif" alt="worldcup2023">
+                </marquee>
+            </div>
+            <div class="image">
+                <img src="bookmyshow.avif" alt="bookmyshow Offer"class="offer">
+            </div>
+            <div class="recom">
+                <p>Recommended Movies</p>
+            </div>
+            <div class="box">
+                <div class="Movie_rec">
+                    <div class="Movie_img">
+                        <img src="one.avif" alt="Movie1"height="400px"width="260px"class="one"><br>
+                        <img src="two.avif" alt="Movie2"height="400px"width="260px"class="two">
+                        <img src="three.avif" alt="Movie3"height="400px"width="260px"class="three">
+                        <img src="four.avif" alt="Movie4"height="400px"width="260px"class="four">
+                        <img src="five.avif" alt="Movie5"height="400px"width="260px"class="five">
+                    </div>
+                </div>
+            </div>
+            <div class="names">
+                <p class="frst">Mission Raniganj:The<br>Great Bharat Rescue</p>
+                <i class="frsti">Drama/Historical/Thriller</i>
+                <p class="second">Dono</p>
+                <i class="secondi">Drama/Romantic</i>
+                <p class="third">Skanda</p>
+                <i class="thirdi">Action/Drama</i>
+                <p class="fourth">Mad(2023)</p>
+                <i class="fourthi">Comedy/Drama</i>
+                <p class="fifth">Rules Ranjann</p>
+                <i class="fifthi">Comedy/Drama/Romantic</i>
+            </div>
+            <div class="entertain">
+                <img src="pic5.avif" alt="EntertainMent Ad"class="ad">
+            </div>
+            <div class="LiveEvents">
+                <p class="event_name">The Best of Live Events</p>
+            </div>
+            <div class="Events_pics">
+                <div class="inside">
+                    <img src="workshops.avif" alt="workshops"height="260px"width="220" class="event1">
+                    <img src="kids.avif" alt="Kids"height="260px"width="220" class="event2">
+                    <img src="comedy.avif" alt="comedy"height="260px"width="220" class="event3">
+                    <img src="musi.avif" alt="music"height="260px"width="220" class="event4">
+                    <img src="esports.avif" alt="esports"height="260px"width="220" class="event5">
+                </div>
+            </div>
+            <div class="premiere">
+                <div class="premiere_name">
+                    <i class='bx bx-play-circle'></i>
+                    <p class="premiere_cap">PREMIERE</p>
+                </div>
+                <P class="premiere_sub">watch new movies at home,every Friday</P>
+                <div class="premiere_head">
+                    <b><p class="premieresub_name">Premieres</p></b>
+                </div>
+                <p class="premieresub_name_sub">Brand new releases every Friday.</p>
+                <div class="premiere_pic">
+                    <div class="inside_box">
+                        <img src="premier1.avif" alt="premiere1_pic"height="350px"width="230px"class="premiere1">
+                        <img src="premier2.avif" alt="premiere2_pic"height="350px"width="230px"class="premiere2">
+                        <img src="premiere3.avif" alt="premiere3_pic"height="350px"width="230px"class="premiere3">
+                        <img src="premiere4.avif" alt="premiere4_pic"height="350px"width="230px"class="premiere4">
+                        <img src="premiere5.avif" alt="premiere5_pic"height="350px"width="230px"class="premiere5">
+                    </div>
+                </div>
+                <div class="premiere_subb">
+                    <div class="inside1_box">
+                        <i class="premiere_subb1">Gran Turismo</i>
+                        <i class="premiere_subb2">Are You There God?Its Me</i>
+                        <i class="premiere_subb3">Asteroid City</i>
+                        <i class="premiere_subb4">Tumse Milkar</i>
+                        <i class="premiere_subb5">Titane</i>
+                    </div>
+                </div>
+                <div class="lang">
+                    <i class="lang1">English</i>
+                    <i class="lang2">English</i>
+                    <i class="lang3">English</i>
+                    <i class="lang4">Hindi</i>
+                    <i class="lang5">French</i>
+                </div>
+            </div>
+            <div class="baselinee">
+                <div class="subs">
+                    <i class='bx bx-store-alt'></i>
+                    <p class="list_show"><b>List your Show</b>&nbsp;&nbsp;&nbsp;Got a show,event,activity or a great experience?Partner with us &get listed on BookMyShow</p>
+                    <button>Contact today!</button>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer_box">
+                    <i class='bx bx-user-voice'></i>
+                    <i class='bx bx-camera-movie' ></i>
+                    <i class='bx bx-envelope-open' ></i>
+                </div>
+                <div class="footer_sub">
+                    <i class="customer_sup">24/7 Customer Care</i>
+                    <i class="resend">Resend Booking Confirmation</i>
+                    <i class="subscribe">Subscribe to the news letter</i>
+                </div>
+                <div class="footer_bookmyshow">
+                    ________________________________________________________________________________________<i class="footer_bookmyshow_logo">Book<span class="my">My</span>Show</i>__________________________________________________________________________________________
+                </div>
+                <div class="social">
+                    <i class='bx bxl-facebook-square'></i>
+                    <i class='bx bxl-instagram bx-spin' ></i>
+                    <i class='bx bxl-youtube bx-tada bx-rotate-180' ></i>
+                    <i class='bx bxl-pinterest bx-burst bx-flip-horizontal' ></i>
+                    <i class='bx bxl-linkedin bx-fade-up bx-rotate-180' ></i>
+                </div>
+                <div class="copy">
+                    <div class="copy_sub">
+                        <p class="copyright">Copyright 2023 @-Bigtree Entertainment Pvt.Ltd All rights Reserved The content and images used on this site are copyright protected and copyrights vests with the respective owners.</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                
+            </script>
+        </div>
+    </body>
+</html>
